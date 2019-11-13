@@ -1,20 +1,8 @@
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DemoMaterialModule} from './material-module';
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
-
-
+import {NgModule} from '@angular/core';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -94,22 +82,7 @@ import {
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
-  ],
-  declarations: [
-    AppComponent
-  ],
-  entryComponents: [],
-  imports: [
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    DemoMaterialModule,
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class DemoMaterialModule {}
+
