@@ -34,7 +34,8 @@ export class PokesComponent implements OnInit {
   }
 
   public toggleImage(link : string){
-    document.getElementById('img-poke').src=link;
+    src: HTMLImageElement;
+    document.getElementById('img-poke').setAttribute( 'src', link );
   }
 
 
