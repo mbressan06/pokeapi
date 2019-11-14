@@ -3,23 +3,23 @@
         <div class="col-sm">
             <div class="row">
                 <div class="col-3 image-box">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png" class="image-box--center" />
+                    <img src="{{defaultImage}}" id="img-poke" class="image-box--center" />
                 </div>
                 <div class="col-9 poke-info">
-                    <div class="number__text">#000</div>
-                    <div class="name__text">NOME EM INGLÊS</div>
-                    <div class="jp-name__text">nome em japonês</div>
-                    <div class="genus__text">genus</div>
+                    <div class="number__text">#{{pokeId}}</div>
+                    <div class="name__text">{{pokeName}}</div>
+                    <div class="jp-name__text">{{pokeJpName}}</div>
+                    <div class="genus__text">{{genus}}</div>
                     <div class="d-flex flex-row">
-                        <div class="p-2"><button class="btn-info--gray">TIPO A</button></div>
-                        <div class="p-2"><button class="btn-info--gray">TIPO B</button></div>
+                        <div class="p-2"><button class="btn-info--gray" (click)="this.toggleImage(defaultImage)" >TIPO A</button></div>
+                        <div class="p-2"><button class="btn-info--gray" (click)="this.toggleImage(shinyImage)" >TIPO B</button></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm">
             <div class="flavor-text">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem</p>
+                <p>{{flavorText}}</p>
             </div>
         </div>
     </div>
