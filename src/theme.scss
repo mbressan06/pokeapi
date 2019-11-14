@@ -101,16 +101,19 @@
         border-top-left-radius: 0px;
         border-top-right-radius: 0px;
         text-align: center;
-        font: 700 10px/13px Roboto;
+        font: 500 10px/13px Roboto;
         letter-spacing: 1.25px;
         color: #999999;
         background-color: #EEEEEE;
         opacity: 1;
         min-width: 126px;
-        :before{
+        :after{
+            content: "";
+            position: absolute;
             width: 1px;
-            height: 22px;
-            background-color: #CCCCCC;  
+            height: 20px;
+            background-color: #CCCCCC;
+            right: 0%;
         }
         
     }
@@ -182,7 +185,7 @@
 }
 
 .poke-info{
-    .number{
+    .number__text{
         float: right;
         width: 37px;
         height: 19px;
@@ -192,7 +195,7 @@
         color: #999999;
         opacity: 1;
     }
-    .name{
+    .name__text{
         width: 171px;
         height: 24px;
         text-align: left;
@@ -202,7 +205,7 @@
         opacity: 1;
         white-space: nowrap;
     }
-    .jp-name{
+    .jp-name__text{
         width: 147px;
         height: 21px;
         text-align: left;
@@ -213,7 +216,7 @@
         opacity: 1;
         white-space: nowrap;
     }
-    .genus{
+    .genus__text{
         width: 51px;
         height: 19px;
         text-align: right;
