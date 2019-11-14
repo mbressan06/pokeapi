@@ -3,10 +3,10 @@
 <mat-tab-group>
 	<mat-tab label="GERAÇÃO 1">
 		<ng-template matTabContent>
-			<mat-tab-group>
-				<!-- <mat-tab *ngFor="let tab of asyncTabs | async"> -->
-				<mat-tab *ngFor="let poke of pokesGen1.slice(0, 7);" label="{{poke.name | uppercase}}">
-					{{poke.id}}
+			<mat-tab-group class="species">
+				<mat-tab *ngFor="let poke of pokesGen1;" label="{{poke.name | uppercase}}">
+          <!--<p>{{poke.url.slice(42, -1)}}</p>-->
+          <card-pokes></card-pokes>
 				</mat-tab>
 			</mat-tab-group>
 		</ng-template>
@@ -14,9 +14,10 @@
 
 	<mat-tab label="GERAÇÃO 2">
 		<ng-template matTabContent>
-			<mat-tab-group>
-				<mat-tab *ngFor="let poke of pokesGen2.slice(0, 7);" label="{{poke.name | uppercase}}">
-					{{poke.id}}
+			<mat-tab-group class="species">
+				<mat-tab *ngFor="let poke of pokesGen2;" label="{{poke.name | uppercase}}">
+          <!--<p>{{poke.url.slice(42, -1)}}</p>-->
+					<card-pokes></card-pokes>
 				</mat-tab>
 			</mat-tab-group>
 		</ng-template>

@@ -52,6 +52,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { PokesComponent } from './pokes/pokes.component';
 
 @NgModule({
   exports: [
@@ -96,7 +97,8 @@ import {
     ScrollingModule,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    PokesComponent
   ],
   entryComponents: [],
   imports: [
