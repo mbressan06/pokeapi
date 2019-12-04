@@ -8,21 +8,26 @@ import { ApiService } from './api.service';
 })
 
 export class AppComponent implements OnInit {
-  pokesTabs1: any;
-  pokesTabs2: any;
-  pokesGen1;
-  pokesGen2;
-  
+  allPokes; 
+  generation = [
+    'Geração 1',
+    'Geração 2'
+  ];
+
   constructor(private apiService: ApiService) {
-    this.pokesTabs1 = this.pokesGen1;
-    this.pokesTabs2 = this.pokesGen2;
+    this.allPokes = [1,2];
   }
+
   ngOnInit() {
-    this.apiService.getGen1().subscribe((data)=>{
-      this.pokesGen1 = data['pokemon_species'].slice(0,7);
-    });
-    this.apiService.getGen2().subscribe((data)=>{
-      this.pokesGen2 = data['pokemon_species'].slice(0,7);
-    });
+    for (let i = 1; i <= this.allPokes.length; i++) {
+      this.apiService.getGen(i).subscribe((data)=>{
+        if (i == 1) {
+          this.allPokes[i] = data['pokemon_species'].slice(0,7);
+        } else {
+          this.allPokes[i] = data['pokemon_species'].slice(0,7);
+          this.allPokes.shift();
+        }
+      });
+    }
   }
 }

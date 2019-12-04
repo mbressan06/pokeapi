@@ -1,21 +1,11 @@
 <ng-container></ng-container>
 
 <mat-tab-group>
-	<mat-tab label="GERAÇÃO 1">
+	<mat-tab *ngFor="let gen of generation; let i=index" label="{{gen}}">
 		<ng-template matTabContent>
 			<mat-tab-group class="species">
-				<mat-tab *ngFor="let poke of pokesGen1;" label="{{poke.name | uppercase}}">
-          <card-pokes [pokeId]="poke.url.slice(42, -1)"></card-pokes>
-				</mat-tab>
-			</mat-tab-group>
-		</ng-template>
-	</mat-tab>
-
-	<mat-tab label="GERAÇÃO 2">
-		<ng-template matTabContent>
-			<mat-tab-group class="species">
-				<mat-tab *ngFor="let poke of pokesGen2;" label="{{poke.name | uppercase}}">
-					<card-pokes [pokeId]="poke.url.slice(42, -1)"></card-pokes>
+				<mat-tab *ngFor="let poke of allPokes[i] | keyvalue; let j=index" label="{{poke.value.name}}">
+					  <card-pokes [pokeId]="poke.value.url.slice(42, -1)"></card-pokes>
 				</mat-tab>
 			</mat-tab-group>
 		</ng-template>

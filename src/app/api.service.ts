@@ -6,11 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
   constructor(private httpClient: HttpClient) { }
-  public getGen1(){
-    return this.httpClient.get(`https://pokeapi.co/api/v2/generation/1`);
-  }
-  public getGen2(){
-    return this.httpClient.get(`https://pokeapi.co/api/v2/generation/2`);
+  public getGen(gen){
+    return this.httpClient.get(`https://pokeapi.co/api/v2/generation/${gen}`);
   }
   public getSpecie(id){
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);

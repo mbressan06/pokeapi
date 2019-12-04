@@ -6,6 +6,7 @@ import { ApiService } from '../api.service';
   templateUrl: './pokes.component.html',
   styleUrls: ['./pokes.component.scss']
 })
+
 export class PokesComponent implements OnInit {
   @Input()
   pokeId: string;
@@ -17,7 +18,6 @@ export class PokesComponent implements OnInit {
   flavorText;
 
   constructor(private apiService: ApiService) {}
-
   ngOnInit() {
     this.apiService.getSpecie(this.pokeId).subscribe((data)=>{
       let flavorTextIndex = data['flavor_text_entries'].map(a => a['language']['name']).indexOf("en");
@@ -32,10 +32,10 @@ export class PokesComponent implements OnInit {
   
     });
   }
+  
 
   public toggleImage(link : string){
-    src: HTMLImageElement;
-    document.getElementById('img-poke').setAttribute( 'src', link );
+    //document.getElementById('img-poke').setAttribute( 'src', link );
   }
 
 

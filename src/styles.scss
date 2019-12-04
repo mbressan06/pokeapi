@@ -1,4 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+::-webkit-scrollbar {
+    width: 6px;
+    
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #d0d0d0; 
+    margin:3px;
+    border-radius: 10px;    
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #999999; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.container--fluid {
+    padding: 7px 20px;
+    max-width: fit-content;
+}
+
+@media (max-width: 797px) {
+    body { 
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
