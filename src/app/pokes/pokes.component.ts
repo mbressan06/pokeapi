@@ -16,8 +16,10 @@ export class PokesComponent implements OnInit {
   pokeJpName;
   genus;
   flavorText;
-
+  img;
+  
   constructor(private apiService: ApiService) {}
+
   ngOnInit() {
     this.apiService.getSpecie(this.pokeId).subscribe((data)=>{
       let flavorTextIndex = data['flavor_text_entries'].map(a => a['language']['name']).indexOf("en");
@@ -29,14 +31,16 @@ export class PokesComponent implements OnInit {
     this.apiService.getSpriteImg(this.pokeId).subscribe((data)=>{
       this.defaultImage = data['sprites']['front_default'];
       this.shinyImage = data['sprites']['front_shiny'];
+      this.img = data['sprites']['front_default'];
   
     });
   }
-  
 
-  public toggleImage(link : string){
-    //document.getElementById('img-poke').setAttribute( 'src', link );
+  toggleImage(link): void {
+    if (link === this.defaultImage) {
+      this.img = this.defaultImage;
+    } else {
+      this.img = this.shinyImage;
+    }
   }
-
-
 }
